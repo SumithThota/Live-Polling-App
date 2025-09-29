@@ -2,6 +2,8 @@
 
 A real-time polling application built with React and Express.js featuring teacher and student interfaces with live updates via Socket.io.
 
+🌐 **[Live Demo](https://live-polling-frontend.onrender.com)** | 📖 **[Deployment Guide](./DEPLOYMENT_GUIDE.md)**
+
 ## Features
 
 ### Teacher Features
@@ -12,6 +14,8 @@ A real-time polling application built with React and Express.js featuring teache
 - ✅ Configurable poll time limit (10-300 seconds)
 - ✅ Chat functionality with students
 - ✅ Automatic poll ending when all students answer or timer expires
+- ✅ Correct answer tracking and winner display
+- ✅ Student kick-out functionality
 
 ### Student Features
 - ✅ Enter unique name on first visit
@@ -20,6 +24,8 @@ A real-time polling application built with React and Express.js featuring teache
 - ✅ 60-second (configurable) timer for answering
 - ✅ Real-time chat with teacher and other students
 - ✅ Automatic results display when time expires
+- ✅ Responsive mobile interface
+- ✅ Graceful handling when kicked out
 
 ### Technical Features
 - ✅ Real-time updates using Socket.io
@@ -28,6 +34,9 @@ A real-time polling application built with React and Express.js featuring teache
 - ✅ Professional UI with modern styling
 - ✅ Error handling and validation
 - ✅ Persistent connection management
+- ✅ Rate limiting and spam protection
+- ✅ Performance monitoring and health checks
+- ✅ Production-ready deployment configuration
 
 ## Technology Stack
 

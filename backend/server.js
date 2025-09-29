@@ -10,8 +10,10 @@ const server = http.createServer(app);
 // Enhanced Socket.IO configuration for better performance and responsiveness
 const io = socketIo(server, {
   cors: {
-    origin: ["http://localhost:3000", "http://localhost:3001"],
-    methods: ["GET", "POST"],
+    origin: process.env.NODE_ENV === 'production' 
+      ? [process.env.FRONTEND_URL, /\.onrender\.com$/]
+      : ["http://localhost:3000", "http://localhost:3001"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   },
   pingTimeout: 60000, // Increase ping timeout for slower connections
@@ -26,7 +28,9 @@ const io = socketIo(server, {
 
 // Enhanced middleware with performance optimizations
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"],
+  origin: process.env.NODE_ENV === 'production' 
+    ? [process.env.FRONTEND_URL, /\.onrender\.com$/]
+    : ["http://localhost:3000", "http://localhost:3001"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true

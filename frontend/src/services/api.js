@@ -1,12 +1,18 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5002/api';
+// Use environment variable for API URL, fallback to localhost for development
+const API_BASE_URL = process.env.REACT_APP_API_URL 
+  ? `${process.env.REACT_APP_API_URL}/api`
+  : 'http://localhost:5002/api';
+
+console.log('API Base URL:', API_BASE_URL); // For debugging deployment
 
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true, // Enable credentials for CORS
 });
 
 export const pollAPI = {

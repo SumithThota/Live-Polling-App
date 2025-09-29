@@ -6,7 +6,16 @@ class SocketService {
   }
 
   connect() {
-    this.socket = io('http://localhost:5002');
+    // Use environment variable for socket URL, fallback to localhost for development
+    const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || 'http://localhost:5002';
+    console.log('Socket URL:', SOCKET_URL); // For debugging deployment
+    
+    this.socket = io(SOCKET_URL, {
+      withCredentials: true, // Enable credentials for CORS
+      transports: ['polling', 'websocket'], // Support both transport methods
+      upgrade: true,
+      rememberUpgrade: true
+    });
     return this.socket;
   }
 
