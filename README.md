@@ -170,6 +170,28 @@ live-polling-app/
 
 ## Deployment
 
+📖 **[Complete Deployment Guide](./DEPLOYMENT_GUIDE.md)** - Detailed instructions for both deployment methods
+
+### Two Deployment Options Available:
+
+#### Method 1: Blueprint Deployment (Automated)
+- ✅ Deploy both services at once using `render.yaml`
+- ✅ Infrastructure-as-code approach
+- ✅ Automated setup for complex applications
+
+#### Method 2: Individual Web Services (Beginner-Friendly)
+- ✅ Deploy one service at a time with more control
+- ✅ Step-by-step setup process
+- ✅ Easier debugging and troubleshooting
+
+### Quick Start - Render.com Deployment
+
+1. **Push to GitHub**: Ensure all code is committed
+2. **Choose Method**: Blueprint or Individual Services
+3. **Deploy**: Follow the [Deployment Guide](./DEPLOYMENT_GUIDE.md)
+4. **Configure**: Update environment variables with actual URLs
+5. **Test**: Verify both frontend and backend are working
+
 ### Environment Variables
 Create `.env` files for production:
 
