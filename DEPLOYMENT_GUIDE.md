@@ -67,19 +67,32 @@ Live-Polling-App/
 - Static files: Served from `./frontend/build`
 - Auto-updates environment variables
 
-## ⚙️ Step 3: Environment Variables (Auto-Configured)
+## ⚙️ Step 3: Configure Environment Variables
 
-The `render.yaml` file automatically sets these variables:
+After deployment, you need to manually update some environment variables with your actual service URLs:
 
 ### Backend Variables:
-- `NODE_ENV=production`
-- `PORT` (auto-assigned by Render)
-- `FRONTEND_URL` (auto-linked to frontend service)
+- `NODE_ENV=production` ✅ (auto-set)
+- `PORT` ✅ (auto-assigned by Render)
+- `FRONTEND_URL` ❗ (update manually)
 
 ### Frontend Variables:
-- `NODE_ENV=production`
-- `REACT_APP_API_URL` (auto-linked to backend service)
-- `REACT_APP_SOCKET_URL` (auto-linked to backend service)
+- `NODE_ENV=production` ✅ (auto-set)
+- `REACT_APP_API_URL` ❗ (update manually)
+- `REACT_APP_SOCKET_URL` ❗ (update manually)
+
+### 3.1 Update Backend Environment Variables
+1. Go to your backend service in Render dashboard
+2. Click **Environment** tab
+3. Update `FRONTEND_URL` to: `https://your-frontend-service-name.onrender.com`
+
+### 3.2 Update Frontend Environment Variables
+1. Go to your frontend service in Render dashboard
+2. Click **Environment** tab  
+3. Update `REACT_APP_API_URL` to: `https://your-backend-service-name.onrender.com`
+4. Update `REACT_APP_SOCKET_URL` to: `https://your-backend-service-name.onrender.com`
+
+**Note**: Replace the service names with your actual Render service URLs.
 
 ## 🔍 Step 4: Verify Deployment
 

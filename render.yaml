@@ -16,10 +16,7 @@ services:
           name: live-polling-backend
           property: port
       - key: FRONTEND_URL
-        fromService:
-          type: web
-          name: live-polling-frontend
-          property: url
+        value: https://live-polling-frontend.onrender.com
 
   # Frontend Static Site
   - type: web
@@ -33,15 +30,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: REACT_APP_API_URL
-        fromService:
-          type: web
-          name: live-polling-backend
-          property: url
+        value: https://live-polling-backend.onrender.com
       - key: REACT_APP_SOCKET_URL
-        fromService:
-          type: web
-          name: live-polling-backend
-          property: url
+        value: https://live-polling-backend.onrender.com
 
 # Database (if you want to add PostgreSQL later)
 # databases:
