@@ -1,0 +1,90 @@
+.kicked-out-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.kicked-out-content {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-size: 16px;
+}
+
+.kicked-out-message h1 {
+  color: #1f2937;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.kicked-out-message .reason {
+  color: #6b7280;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.try-again-button {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.try-again-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.try-again-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .kicked-out-container {
+    padding: 1rem;
+  }
+  
+  .kicked-out-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .kicked-out-message h1 {
+    font-size: 2rem;
+  }
+  
+  .kicked-out-message .reason {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,172 @@
+.teacher-dashboard {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.dashboard-header {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header h1 {
+  color: #1f2937;
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.student-count {
+  color: #6b7280;
+  font-weight: 500;
+  background: #f3f4f6;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.poll-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.participants-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header-actions {
+    justify-content: center;
+  }
+  
+  .dashboard-nav {
+    padding: 0 1rem;
+    overflow-x: auto;
+  }
+  
+  .nav-button {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+  }
+  
+  .dashboard-content {
+    padding: 1rem;
+  }
+  
+  .tab-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 0.75rem;
+  }
+  
+  .dashboard-content {
+    padding: 0.75rem;
+  }
+  
+  .poll-section,
+  .participants-section {
+    padding: 1rem;
+  }
+}
+
+/* Dashboard tabs */
+.dashboard-tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.tab-button {
+  background: #f3f4f6;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.tab-button.active {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Chat toggle button */
+.chat-toggle {
+  background: #7765DA;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-toggle:hover {
+  background: #5767D0;
+}
+
+/* History layout */
+.history-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+}

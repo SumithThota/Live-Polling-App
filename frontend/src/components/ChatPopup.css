@@ -1,0 +1,237 @@
+.chat-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: #F2F2F2;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border: 1px solid #6E6E6E;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #7765DA, #5767D0);
+  color: white;
+  padding: 1rem 1.25rem;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.close-chat:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #F2F2F2;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #6E6E6E;
+  border-radius: 2px;
+}
+
+.no-messages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #373737;
+  font-style: italic;
+  text-align: center;
+}
+
+.message {
+  max-width: 85%;
+  word-wrap: break-word;
+}
+
+.message.teacher {
+  align-self: flex-start;
+}
+
+.message.student {
+  align-self: flex-end;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.sender-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6E6E6E;
+}
+
+.message.teacher .sender-name {
+  color: #7765DA;
+}
+
+.message.student .sender-name {
+  color: #4F0DCE;
+}
+
+.message-time {
+  font-size: 0.625rem;
+  color: #6E6E6E;
+  font-family: monospace;
+}
+
+.message-content {
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  border: 1px solid #6E6E6E;
+  color: #373737;
+}
+
+.message.teacher .message-content {
+  background: rgba(119, 101, 218, 0.1);
+  border-color: #7765DA;
+}
+
+.message.student .message-content {
+  background: rgba(79, 13, 206, 0.1);
+  border-color: #4F0DCE;
+}
+
+.chat-input {
+  padding: 1rem;
+  border-top: 1px solid #6E6E6E;
+  display: flex;
+  gap: 0.5rem;
+  background: #F2F2F2;
+  border-radius: 0 0 16px 16px;
+}
+
+.chat-input input {
+  flex: 1;
+  border: 1px solid #6E6E6E;
+  border-radius: 20px;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  outline: none;
+  background: white;
+  color: #373737;
+}
+
+.chat-input input:focus {
+  border-color: #7765DA;
+  box-shadow: 0 0 0 2px rgba(119, 101, 218, 0.2);
+}
+
+.chat-input button {
+  background: #7765DA;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.chat-input button:hover:not(:disabled) {
+  background: #5767D0;
+}
+
+.chat-input button:disabled {
+  background: #6E6E6E;
+  cursor: not-allowed;
+}
+
+.chat-disabled {
+  padding: 1rem;
+  text-align: center;
+  color: #373737;
+  font-size: 0.875rem;
+  background: #F2F2F2;
+  border-top: 1px solid #6E6E6E;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .chat-popup {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    border-radius: 16px 16px 0 0;
+    max-height: 500px;
+  }
+  
+  .chat-header {
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .chat-messages {
+    padding: 0.75rem;
+  }
+  
+  .chat-input {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-popup {
+    height: 70vh;
+  }
+  
+  .message {
+    max-width: 90%;
+  }
+  
+  .message-content {
+    padding: 0.625rem 0.875rem;
+  }
+}

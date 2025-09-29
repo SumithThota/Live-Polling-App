@@ -1,0 +1,485 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f5f5f5;
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Main Content Area */
+.main-content {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  flex: 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-input, .question-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus, .question-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.question-input {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Button Styles */
+.continue-btn, .ask-question-btn, .add-option-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+}
+
+.continue-btn:hover:not(:disabled), 
+.ask-question-btn:hover:not(:disabled),
+.add-option-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.continue-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ask-question-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  float: right;
+  margin-top: 20px;
+}
+
+.add-option-btn {
+  background: transparent;
+  color: #6366f1;
+  border: 2px dashed #6366f1;
+  padding: 12px 24px;
+  margin-top: 15px;
+}
+
+.add-option-btn:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+/* Options Section */
+.options-section {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.option-group {
+  flex: 1;
+}
+
+.option-group h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.option-number {
+  width: 32px;
+  height: 32px;
+  background: #6366f1;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.option-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.option-input:focus {
+  border-color: #6366f1;
+}
+
+/* Teacher Interface */
+.teacher-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.teacher-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.duration-selector {
+  padding: 10px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+}
+
+/* Student Interface */
+.name-entry {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.name-entry h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.name-entry p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.name-entry .form-group {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+/* Loading Screen */
+.loading-screen {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f4f6;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 30px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Active Poll */
+.active-poll {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 30px;
+  font-family: monospace;
+  background: #fef2f2;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #fecaca;
+}
+
+.poll-question-display {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.poll-options-display {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.poll-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.poll-option:hover {
+  border-color: #6366f1;
+  background: #f8faff;
+}
+
+.poll-option.selected {
+  border-color: #6366f1;
+  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+}
+
+.option-number-display {
+  width: 28px;
+  height: 28px;
+  background: #6366f1;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.poll-option span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Results Display */
+.results-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.result-bar-container {
+  margin-bottom: 20px;
+}
+
+.result-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.result-bar {
+  width: 100%;
+  height: 40px;
+  background: #f3f4f6;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.result-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  transition: width 0.8s ease;
+  min-width: 0;
+}
+
+/* Kicked Screen */
+.kicked-screen {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.kicked-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 20px;
+}
+
+.kicked-message {
+  font-size: 1.2rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Poll History */
+.history-section {
+  margin-top: 40px;
+}
+
+.history-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.history-item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.history-question {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.history-results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.history-percentage {
+  font-weight: 600;
+  color: #6366f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .options-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .teacher-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .poll-option {
+    padding: 15px;
+  }
+  
+  .timer-display {
+    font-size: 2rem;
+    padding: 15px;
+  }
+  
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .main-content {
+    padding: 15px;
+  }
+  
+  .teacher-title {
+    font-size: 1.5rem;
+  }
+  
+  .poll-question-display {
+    font-size: 1.2rem;
+  }
+  
+  .timer-display {
+    font-size: 1.8rem;
+  }
+}

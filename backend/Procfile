@@ -1,0 +1,4 @@
+# Deployment Configuration Files
+
+## Backend (Heroku)
+web: node server.js
