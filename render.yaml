@@ -10,11 +10,6 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        fromService:
-          type: web
-          name: live-polling-backend
-          property: port
       - key: FRONTEND_URL
         value: https://live-polling-frontend.onrender.com
 
