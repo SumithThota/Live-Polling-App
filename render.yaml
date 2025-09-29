@@ -3,7 +3,7 @@ services:
   - type: web
     name: live-polling-backend
     env: node
-    plan: starter
+    plan: hobby
     buildCommand: cd backend && npm install
     startCommand: cd backend && npm start
     healthCheckPath: /api/health
@@ -17,7 +17,7 @@ services:
   - type: web
     name: live-polling-frontend
     env: static
-    plan: starter
+    plan: hobby
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/build
     pullRequestPreviewsEnabled: false
